@@ -24,6 +24,6 @@ export class AdminHeaderComponent implements OnInit {
     onLogout(event) {
         event.preventDefault();
         this.authService.logout();
-        this.routerService.navigate(['auth/login']);
+        this.routerService.navigate(['Default/Login']);
     }
 }

@@ -73,7 +73,7 @@ body {
   background: rgba(0, 0, 0, 0.07);
 }
 #side-menu > li > a.active {
-  background: #2cabe3;
+  background: rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-weight: 500;
 }

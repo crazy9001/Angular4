@@ -6,7 +6,7 @@ import {LoginComponent} from '../auth/login/login.component';
     imports: [
         RouterModule.forRoot([
             { path: '', redirectTo: 'Default', pathMatch: 'full' },
-            { path: 'auth/login', component: LoginComponent },
+            { path: 'Default/Login', component: LoginComponent },
         ])
     ],
     exports: [RouterModule]
