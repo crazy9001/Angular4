@@ -1,0 +1,33 @@
+
+<!-- row -->
+<div class="row">
+    <!-- Left sidebar -->
+    <div class="col-md-12">
+        <div class="white-box">
+            <!-- row -->
+            <div class="row">
+                <div class="col-lg-2 col-md-3  col-sm-12 col-xs-12 inbox-panel">
+                    <div>
+                        <div class="list-group mail-list m-t-20">
+                            <a [routerLink]="['/Default/Manager/UserManager']" class="list-group-item" routerLinkActive="active">
+                                <i class="mdi mdi-account-multiple"></i> Quản lý user <span class="label label-rouded label-success pull-right">5</span>
+                            </a>
+                            <a [routerLink]="['/Default/Manager/CategoryManager']" class="list-group-item" routerLinkActive="active">
+                                <i class="mdi mdi-format-indent-decrease"></i> Chuyên mục
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item">Draft <span class="label label-rouded label-warning pull-right">15</span></a>
+                            <a href="javascript:void(0)" class="list-group-item">Sent Mail</a>
+                            <a href="javascript:void(0)" class="list-group-item">Trash <span class="label label-rouded label-default pull-right">55</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 mail_listing">
+                    <div class="inbox-center">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </div>
+</div>
