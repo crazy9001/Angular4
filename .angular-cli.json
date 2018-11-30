@@ -19,20 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "../node_modules/font-awesome/css/font-awesome.css",
-        "../src/assets/plugins/sidebar-nav/dist/sidebar-nav.min.css",
-        "../src/animate.css",
-        "../src/styles.css",
-        "../src/assets/css/megna-dark.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../src/assets/plugins/sidebar-nav/dist/sidebar-nav.min.js",
-        "../src/assets/js/jquery.slimscroll.js",
-        "../src/assets/js/waves.js",
-        "../src/assets/js/custom.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

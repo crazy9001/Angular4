@@ -13,6 +13,7 @@ import {AuthGuard} from './guard/auth.guard';
 import {UsersService} from './managers/users/users.service';
 import { HttpModule } from '@angular/http';
 import { NgProgressModule } from 'ngx-progressbar';
+import {CategoriesService} from './managers/categories/categories.service';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { NgProgressModule } from 'ngx-progressbar';
             multi: true
         },
         AuthGuard,
-        UsersService
+        UsersService,
+        CategoriesService
     ],
     bootstrap: [AppComponent]
 })
