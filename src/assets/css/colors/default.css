@@ -20,6 +20,8 @@
 /*Just change your choise color here its theme Colors*/
 body {
   background: #fff;
+  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
 }
 .top-left-part {
   background: #fff;
@@ -160,4 +162,27 @@ body {
 .panel-themecolor a:hover,
 .panel-theme a:hover {
   color: #0791e6;
+}
+.panel-custom {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin: 0;
+}
+.panel-custom .panel-heading, .panel-custom .panel-body {
+  padding: 10px;
+}
+.panel-custom .panel-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.bg-title h4 {
+  font-weight: bold;
+}
+.panel-custom .form-group{
+  margin-bottom: 15px;
+}
+.panel-custom .form-group:after{
+  clear: both;
 }

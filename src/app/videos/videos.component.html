@@ -3,14 +3,56 @@
         <h4 class="page-title">Quản lý video</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i
-                class="ti-settings text-white"></i></button>
-        <a href="javascript: void(0);" target="_blank"
-           class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
-        <ol class="breadcrumb">
-            <li><a href="#">Dashboard</a></li>
-            <li class="active">Contact Page</li>
-        </ol>
+
+        <div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Tạo mới video</h4> </div>
+                    <div class="modal-body">
+
+                        <div class="panel panel-default panel-custom" id="video-information">
+                            <div class="panel-heading">Thông tin</div>
+                            <div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="title-video" class="col-sm-2 control-label p-0">Tiêu đề</label>
+                                        <div class="col-sm-10 p-0">
+                                            <input type="text" class="form-control" id="title-video">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description-video" class="col-sm-2 control-label p-0">Tóm tắt</label>
+                                        <div class="col-sm-10 p-0">
+                                            <textarea class="form-control" id="description-video"></textarea>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="publish-date-video" class="col-sm-2 control-label p-0">Ngày xuất bản</label>
+                                        <div class="col-sm-10 p-0">
+                                            <input type="text" class="form-control" id="publish-date-video">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-info pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#responsive-modal">
+            <i class="mdi mdi-upload"></i> Tạo video mới
+        </button>
     </div>
     <!-- /.col-lg-12 -->
 </div>
