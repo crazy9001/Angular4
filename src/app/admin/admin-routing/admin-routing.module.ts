@@ -8,6 +8,9 @@ import {VideosComponent} from '../../videos/videos.component';
 import {ManagersComponent} from '../../managers/managers.component';
 import {UsersComponent} from '../../managers/users/users.component';
 import {CategoriesComponent} from '../../managers/categories/categories.component';
+import {VideoDraftComponent} from '../../videos/video-draft/video-draft.component';
+import {VideoWaitingPublicComponent} from '../../videos/video-waiting-public/video-waiting-public.component';
+import {VideoPublishedComponent} from '../../videos/video-published/video-published.component';
 
 @NgModule({
     imports: [
@@ -30,6 +33,25 @@ import {CategoriesComponent} from '../../managers/categories/categories.componen
                     {
                         path: 'VideosManager',
                         component: VideosComponent,
+                        children: [
+                            {
+                                path: '',
+                                redirectTo: 'Draft',
+                                pathMatch: 'full'
+                            },
+                            {
+                                path: 'Draft',
+                                component: VideoDraftComponent,
+                            },
+                            {
+                                path: 'WaitingPublic',
+                                component: VideoWaitingPublicComponent,
+                            },
+                            {
+                                path: 'Published',
+                                component: VideoPublishedComponent,
+                            }
+                        ]
                     },
                     {
                         path: 'Manager',

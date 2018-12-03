@@ -186,3 +186,38 @@ body {
 .panel-custom .form-group:after{
   clear: both;
 }
+#side-menu > li > a.active {
+  font-weight: bold;
+  background: #555;
+  color: #fff;
+}
+.mail-list .list-group-item.active {
+  font-weight: bold;
+  color: #41b3f9!important;
+}
+.panel-custom .form-group {
+  width: 100%;
+  margin: 15px 0px;
+}
+.panel-custom .control-label {
+  text-align: left;
+}
+.left-aside ul li a.active {
+  background: #555;
+  color: #fff;
+  font-weight: bold;
+}
+.list-style-none li a {
+  font-size: 14px;
+  padding: 10px;
+}
+.left-aside {
+  width: 200px;
+  padding: 0;
+}
+.right-aside {
+  margin-left: 200px;
+}
+.left-aside .list-style-none i {
+  font-size: 20px;
+}

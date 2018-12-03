@@ -1,0 +1,134 @@
+<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     data-backdrop="static" data-keyboard="false" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Tạo mới video</h4>
+            </div>
+
+            <div class="modal-body">
+                <form class="form-horizontal" id="create-video-form" [formGroup]="f" novalidate>
+                    <div class="panel panel-default panel-custom m-t-15" id="video-upload">
+                        <div class="panel-heading">Video</div>
+
+                    </div>
+                    <div class="panel panel-default panel-custom m-t-15" id="video-information">
+                        <div class="panel-heading">Thông tin</div>
+                        <div class="panel-wrapper collapse in">
+                            <div class="panel-body">
+                                <div class="form-group"
+                                     [ngClass]="{'has-success': f.controls['title'].valid,
+                                                    'has-error': f.controls['title'].invalid &&
+                                                    (f.controls['title'].touched ||
+                                                    f.controls['title'].dirty)}
+                                                    ">
+                                    <label for="title-video" class="col-sm-3 control-label p-0">Tiêu đề</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text"
+                                               class="form-control"
+                                               id="title-video"
+                                               formControlName="title"
+                                               required="">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group"
+                                     [ngClass]="{'has-success': f.controls['description'].valid,
+                                                    'has-error': f.controls['description'].invalid &&
+                                                    (f.controls['description'].touched ||
+                                                    f.controls['description'].dirty)}
+                                                    ">
+                                    <label for="description-video" class="col-sm-3 control-label p-0">Tóm tắt</label>
+                                    <div class="col-sm-9 p-0">
+                                        <textarea class="form-control" id="description-video" formControlName="description"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="publish-date-video" class="col-sm-3 control-label p-0">Ngày xuất bản</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="publish-date-video">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'has-success': f.controls['category_id'].valid,
+                                                    'has-error': f.controls['category_id'].invalid &&
+                                                    (f.controls['category_id'].touched ||
+                                                    f.controls['category_id'].dirty)}
+                                                    ">
+                                    <label class="col-sm-3 control-label p-0">Chọn chuyên mục</label>
+                                    <div class="col-sm-9 p-0">
+                                        <select class="form-control" formControlName="category_id">
+                                            <option></option>
+                                            <option value="1">Chính sách và cuộc sống</option>
+                                            <option value="2">Cải cách hành chính</option>
+                                            <option value="3">Chìa khóa thành công</option>
+                                            <option value="4">Công nghệ - Đời sống</option>
+                                            <option value="5">Đối thoại chính sách</option>
+                                        </select>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sub-category" class="col-sm-3 control-label p-0">Chuyên mục phụ</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="sub-category" formControlName="sub_category">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tags" class="col-sm-3 control-label p-0">Tag liên quan</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="tags" formControlName="tag">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="source-video" class="col-sm-3 control-label p-0">Nguồn</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="source-video" formControlName="source">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default panel-custom m-t-15" id="video-seo-information">
+                        <div class="panel-heading">Thông tin SEO</div>
+                        <div class="panel-wrapper collapse in">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="meta-title" class="col-sm-3 control-label p-0">Meta Title</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="meta-title" formControlName="seo_title">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="meta-keyword" class="col-sm-3 control-label p-0">Meta Keyword</label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="meta-keyword" formControlName="seo_keyword">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="meta-description" class="col-sm-3 control-label p-0"> Meta Description </label>
+                                    <div class="col-sm-9 p-0">
+                                        <input type="text" class="form-control" id="meta-description" formControlName="seo_description">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect waves-light" [disabled]="f.invalid" (click)="onSubmit()">Lưu video</button>
+            </div>
+        </div>
+    </div>
+</div>

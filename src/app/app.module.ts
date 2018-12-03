@@ -14,11 +14,21 @@ import {UsersService} from './managers/users/users.service';
 import { HttpModule } from '@angular/http';
 import { NgProgressModule } from 'ngx-progressbar';
 import {CategoriesService} from './managers/categories/categories.service';
+import { CreateVideoComponent } from './videos/create-video/create-video.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {VideoService} from './videos/video.service';
+import { VideoDraftComponent } from './videos/video-draft/video-draft.component';
+import { VideoWaitingPublicComponent } from './videos/video-waiting-public/video-waiting-public.component';
+import { VideoPublishedComponent } from './videos/video-published/video-published.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         VideosComponent,
+        CreateVideoComponent,
+        VideoDraftComponent,
+        VideoWaitingPublicComponent,
+        VideoPublishedComponent,
     ],
     imports: [
         BrowserModule,
@@ -27,7 +37,9 @@ import {CategoriesService} from './managers/categories/categories.service';
         AuthModule,
         ManagersModule,
         HttpModule,
-        NgProgressModule
+        NgProgressModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [
         {
@@ -39,7 +51,8 @@ import {CategoriesService} from './managers/categories/categories.service';
         },
         AuthGuard,
         UsersService,
-        CategoriesService
+        CategoriesService,
+        VideoService
     ],
     bootstrap: [AppComponent]
 })
