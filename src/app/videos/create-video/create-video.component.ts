@@ -34,6 +34,7 @@ export class CreateVideoComponent implements OnInit {
             seo_title: [null, null],
             seo_keyword: [null, null],
             seo_description: [null, null],
+            publish_at: [null, null],
         });
     }
 
@@ -41,7 +42,7 @@ export class CreateVideoComponent implements OnInit {
         this.progressService.start();
         this.subScription = this.videoService.create(this.f.value).subscribe(res => {
             this.progressService.done();
-            console.log(res);
+            this.f.reset();
         }, (errorRes: HttpErrorResponse) => {
             if (errorRes.status === 401) {
                 this.progressService.done();

@@ -1,17 +1,4 @@
-<div class="row bg-title">
-    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Quản lý video</h4>
-    </div>
-    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <app-create-video></app-create-video>
-        <button type="button" class="btn btn-info pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#responsive-modal">
-            <i class="mdi mdi-upload"></i> Tạo video mới
-        </button>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-
-<div class="row">
+<div class="row m-t-15">
     <div class="col-md-12">
         <div class="white-box p-0">
             <!-- .left-right-aside-column-->
@@ -19,27 +6,31 @@
                 <!-- .left-aside-column-->
                 <div class="left-aside">
                     <div class="scrollable">
-                        <ul class="list-style-none">
+                        <app-create-video></app-create-video>
+                        <button type="button" class="btn btn-info waves-effect waves-light full-width" data-toggle="modal" data-target="#responsive-modal">
+                            <i class="mdi mdi-upload"></i> Tạo video mới
+                        </button>
+                        <ul class="list-style-none m-t-15">
                             <li>
-                                <a href="javascript:void(0)" [routerLink]="['/Default/VideosManager/Draft']" routerLinkActive="active">
-                                    <i class="mdi mdi-folder-download"></i> Lưu tạm <span>103</span>
+                                <a [routerLink]="['/Default/VideosManager/Draft']" routerLinkActive="active">
+                                    <i class="mdi mdi-folder-download"></i> Lưu tạm
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" [routerLink]="['/Default/VideosManager/WaitingPublic']" routerLinkActive="active">
-                                    <i class="mdi mdi-folder-download"></i> Chờ xuất bản <span>19</span>
+                                <a [routerLink]="['/Default/VideosManager/WaitingPublic']" routerLinkActive="active">
+                                    <i class="mdi mdi-folder-download"></i> Chờ xuất bản
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" [routerLink]="['/Default/VideosManager/Published']" routerLinkActive="active">
-                                    <i class="mdi mdi-folder-lock-open"></i> Đã xuất bản <span>623</span>
+                                <a [routerLink]="['/Default/VideosManager/Published']" routerLinkActive="active">
+                                    <i class="mdi mdi-folder-lock-open"></i> Đã xuất bản <span class="label label-rouded label-info pull-right">20</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <!-- /.left-aside-column-->
-                <div class="right-aside">
+                <div class="right-aside p-l-0">
                     <router-outlet></router-outlet>
                 </div>
                 <!-- .left-aside-column-->

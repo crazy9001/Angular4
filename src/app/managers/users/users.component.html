@@ -1,55 +1,50 @@
 <div class="scrollable">
     <div class="table-responsive">
-        <table id="demo-foo-addrow" class="table table-hover contact-list">
+        <table id="table-list-user" class="table table-hover contact-list">
             <thead>
             <tr>
-                <th>No</th>
-                <th>Name</th>
+                <th>Tài khoản</th>
+                <th>Họ tên</th>
                 <th>Email</th>
-                <th>Phone</th>
-                <th>Username</th>
-                <th>Joining date</th>
-                <th>Salery</th>
-                <th>Action</th>
+                <th>Trạng thái</th>
+                <th>Sửa</th>
+                <th>Phân quyền</th>
             </tr>
             </thead>
             <tbody *ngIf="users">
 
                 <tr *ngFor="let user of users.data">
-                    <td>1</td>
                     <td>
                         <a href="contact-detail.html">
-                            <img src="assets/images/users/genu.jpg" alt="user" class="img-circle"/>
-                            {{ user.name ? user.name : '' }}
+                            <img src="assets/images/users/no-avatar.gif" alt="user" class="fix-img-circle"/>
+                            {{ user.username ? user.username : '' }}
                         </a>
+                    </td>
+                    <td>
+                        {{ user.name ? user.name : '' }}
                     </td>
                     <td>
                         {{ user.email ? user.email : '' }}
                     </td>
                     <td>
-                        {{ user.phone ? user.phone : '' }}
+                        <i class="mdi mdi-checkbox-marked-outline"></i>
                     </td>
                     <td>
-                        {{ user.username ? user.username : '' }}
+                        <i class="mdi mdi-lead-pencil"></i>
                     </td>
                     <td>
-                        {{ user.created_at ? user.created_at : '' }}
-                    </td>
-                    <td>$1200</td>
-                    <td>
-                        <button type="button"
-                                class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                                data-toggle="tooltip" data-original-title="Delete"><i class="ti-close"
-                                                                                      aria-hidden="true"></i>
+                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete">
+                            <i class="mdi mdi-account-convert"></i>
                         </button>
                     </td>
                 </tr>
-                <ul class="pagination">
+
+                <ul class="pagination btn-group p-l-10">
                     <li class="paginate_button page-item previous" [ngClass]="{ 'disabled': !users.prev_page_url }">
-                        <button (click)="prevPage()" [disabled]="!users.prev_page_url" ><i class="mdi mdi-skip-previous"></i></button>
+                        <button (click)="prevPage()" [disabled]="!users.prev_page_url" class="btn waves-effect" ><i class="mdi mdi-arrow-left"></i></button>
                     </li>
                     <li class="paginate_button page-item next" [ngClass]="{ 'disabled': !users.next_page_url }">
-                        <button (click)="nextPage()" [disabled]="!users.next_page_url"><i class="mdi mdi-skip-next"></i></button>
+                        <button (click)="nextPage()" [disabled]="!users.next_page_url" class="btn waves-effect"><i class="mdi mdi-arrow-right"></i></button>
                     </li>
                 </ul>
 

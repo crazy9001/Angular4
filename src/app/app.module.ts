@@ -20,6 +20,9 @@ import {VideoService} from './videos/video.service';
 import { VideoDraftComponent } from './videos/video-draft/video-draft.component';
 import { VideoWaitingPublicComponent } from './videos/video-waiting-public/video-waiting-public.component';
 import { VideoPublishedComponent } from './videos/video-published/video-published.component';
+import { NgSlimScrollModule, SLIMSCROLL_DEFAULTS } from 'ngx-slimscroll';
+import { LOCALE_ID } from '@angular/core';
+import { MyDatePipe } from './pipe/my-date.pipe';
 
 @NgModule({
     declarations: [
@@ -29,6 +32,7 @@ import { VideoPublishedComponent } from './videos/video-published/video-publishe
         VideoDraftComponent,
         VideoWaitingPublicComponent,
         VideoPublishedComponent,
+        MyDatePipe
     ],
     imports: [
         BrowserModule,
@@ -39,7 +43,8 @@ import { VideoPublishedComponent } from './videos/video-published/video-publishe
         HttpModule,
         NgProgressModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgSlimScrollModule
     ],
     providers: [
         {
@@ -49,6 +54,13 @@ import { VideoPublishedComponent } from './videos/video-published/video-publishe
             provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor,
             multi: true
         },
+        {
+            provide: SLIMSCROLL_DEFAULTS,
+            useValue: {
+                alwaysVisible : false
+            }
+        },
+        { provide: LOCALE_ID, useValue: 'nl-NL' },
         AuthGuard,
         UsersService,
         CategoriesService,
